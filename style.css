@@ -1,0 +1,326 @@
+:root {
+    --teal-600: #0ba5b0;
+    --teal-700: #0a8f99;
+    --teal-900: #0c4a52;
+    --cyan-100: #d6f6f8;
+    --cyan-50: #eafcfd;
+    --grey-bg: #f2f2f2;
+    --ink: #14313a;
+    --ink-soft: #6c8891;
+    --line: #e3edef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    background: var(--grey-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Split hero backdrop */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52%;
+    height: 340px;
+    background: var(--teal-600);
+    z-index: 0;
+}
+
+.page-header {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px 40px 0;
+    text-align: right;
+}
+
+.page-header h1 {
+    font-size: 4.6rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1;
+}
+
+.w-hos { color: #ffffff; }
+.w-pital { color: var(--teal-900); }
+
+.page-header h2 {
+    margin-top: 4px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #b9c2c4;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    margin: 40px auto 60px;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px rgba(12, 74, 82, 0.18);
+    overflow: hidden;
+    min-height: 620px;
+}
+
+.panel {
+    padding: 56px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- Left: form ---- */
+
+.panel-form {
+    justify-content: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal-700);
+    background: var(--cyan-100);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.registry-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--teal-900);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.registry-lede {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+}
+
+form {
+    margin-top: 32px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--teal-900);
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #fbfefe 0%, var(--cyan-50) 100%);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(12, 74, 82, 0.06);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--teal-600);
+    box-shadow: 0 10px 22px rgba(11, 165, 176, 0.14), 0 0 0 4px rgba(11, 165, 176, 0.14);
+    transform: translateY(-1px);
+}
+
+.input-icon {
+    padding-left: 18px;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+.input-wrapper input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 15px 18px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+
+.input-wrapper input::placeholder {
+    color: #9fb3ac;
+}
+
+.input-wrapper input[type="date"] {
+    color: var(--ink-soft);
+}
+
+.login-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 16px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--teal-600) 0%, var(--teal-900) 100%);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(11, 165, 176, 0.3);
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(11, 165, 176, 0.36);
+}
+
+.btn-arrow {
+    transition: transform 0.15s ease;
+}
+
+.login-btn:hover .btn-arrow {
+    transform: translateX(3px);
+}
+
+.create-account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--teal-700);
+}
+
+.create-account span {
+    transition: transform 0.15s ease;
+}
+
+.create-account:hover span {
+    transform: translateX(3px);
+}
+
+.footer-credit {
+    margin-top: auto;
+    padding-top: 60px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+
+.footer-credit strong {
+    color: var(--teal-700);
+}
+
+/* ---- Right: graphic ---- */
+
+.panel-graphic {
+    background: var(--cyan-100);
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.orbit-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px dashed rgba(11, 165, 176, 0.35);
+    border-radius: 50%;
+}
+
+.center-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center-badge h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--teal-900);
+    letter-spacing: 0.02em;
+}
+
+.center-badge p {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    margin-top: 2px;
+}
+
+.orbit-icon {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 16px rgba(11, 165, 176, 0.18);
+}
+
+.i1 { top: -4%;  left: 22%; }
+.i2 { top: -2%;  left: 62%; }
+.i3 { top: 26%;  left: 92%; }
+.i5 { top: 63%;  left: 92%; }
+.i6 { top: 90%;  left: 60%; }
+.i7 { top: 90%;  left: 22%; }
+.i8 { top: 62%;  left: -8%; }
+.i9 { top: 24%;  left: -7%; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+    body::before { width: 100%; height: 260px; }
+
+    .page-header { text-align: center; padding: 40px 24px 0; }
+    .page-header h1 { font-size: 2.8rem; }
+
+    .card { grid-template-columns: 1fr; }
+    .panel { padding: 40px 28px; }
+    .panel-graphic { order: -1; padding-bottom: 60px; }
+    .orbit { width: 260px; height: 260px; }
+}
